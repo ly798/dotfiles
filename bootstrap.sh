@@ -11,3 +11,6 @@ ln -s $DIR/git/gitconfig $home/.gitconfig
 
 echo "terminator..."
 ln -s $DIR/terminator/config $HOME/.config/terminator/config
+
+echo "tmux..."
+ln -s $DIR/tmux/tmux.conf $HOME/.tmux.conf
