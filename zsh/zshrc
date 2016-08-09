@@ -67,7 +67,7 @@ source $ZSH/oh-my-zsh.sh
 if [[ -n $SSH_CONNECTION ]]; then
    export EDITOR='vim'
 else
-   export EDITOR='emacs'
+   export EDITOR='vi'
 fi
 
 # Compilation flags
@@ -111,3 +111,4 @@ export PATH="$PATH:$ANDROID_HOME/platform-tools:$ANDROID_HOME/tools"
 export ANDROID_SDK_ROOT="/opt/android-sdk-linux"
 
 alias tmux="tmux -2"
+[ -z "$TMUX"  ] && export TERM=xterm-256color
