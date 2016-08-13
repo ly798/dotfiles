@@ -53,3 +53,11 @@ elif [ -f $HOME/.spacemacs ];then
     mv $HOME/.spacemacs $BACK_DIR/.spacemacs.$DAY
 fi
 ln -s $DIR/emacs/spacemacs $HOME/.spacemacs
+
+echo "pip source..."
+if [ -L $HOME/.pip/pip.conf ];then
+    unlink $HOME/.pip/pip.conf
+elif [ -f $HOME/.pip/pip.conf ];then
+    mv $HOME/.pip/pip.conf $BACK_DIR/pip.conf.$DAY
+fi
+ln -s $DIR/source/pip.conf $HOME/.pip/pip.conf
