@@ -90,6 +90,7 @@ alias df='df -h'
 export NVM_DIR="/home/yippee/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 export PATH=$PATH:/home/yippee/.local/lib/python2.7/site-packages/django/bin
+export PATH=$PATH:/home/yippee/.local/bin/
 
 alias rdo='ssh root@rdo'
 alias eayun='ssh root@eayunstack'
