@@ -32,7 +32,7 @@ values."
                       auto-completion-enable-snippets-in-popup t
                       auto-completion-enable-help-tooltip t
                       auto-completion-enable-sort-by-usage t)
-     ;; better-defaults
+     better-defaults
      emacs-lisp
      git
      markdown
@@ -45,8 +45,7 @@ values."
      ;; version-control
      (python :variables
              python-test-runner 'pytest
-             python-enable-yapf-format-on-save t
-             )
+             python-enable-yapf-format-on-save t)
      chinese
      gtags
      ibuffer
@@ -54,7 +53,8 @@ values."
      smex
      typography
      erc
-     (eyebrowse :variables eyebrowse-display-help nil)
+     (eyebrowse :variables
+                eyebrowse-display-help nil)
      cscope
      semantic
      )
@@ -275,6 +275,8 @@ you should place your code here."
   ;; 显示行号
   (add-hook 'find-file-hooks (lambda () (linum-mode 1)))
   (setq erc-social-graph-dynamic-graph t)
+  (setq erc-autojoin-channels-alist '(("freenode.net" "#eayunstack")))
+  (erc :server "irc.freenode.net" :port 6667 :nick "lyang")
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
@@ -284,6 +286,10 @@ you should place your code here."
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(erc-autojoin-mode t)
+ '(erc-modules
+   (quote
+    (sound completion autojoin notifications log image hl-nicks services netsplit fill button match track readonly networks ring noncommands irccontrols move-to-prompt stamp menu list)))
  '(markdown-command "/usr/bin/pandoc")
  '(paradox-github-token t))
 (custom-set-faces
@@ -291,4 +297,5 @@ you should place your code here."
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- )
+ '(company-tooltip-common ((t (:inherit company-tooltip :weight bold :underline nil))))
+ '(company-tooltip-common-selection ((t (:inherit company-tooltip-selection :weight bold :underline nil)))))
