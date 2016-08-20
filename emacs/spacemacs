@@ -275,10 +275,9 @@ you should place your code here."
   ;; 显示行号
   (add-hook 'find-file-hooks (lambda () (linum-mode 1)))
   (setq erc-social-graph-dynamic-graph t)
-  (setq erc-autojoin-channels-alist '(("freenode.net" "#eayunstack")))
-  (erc :server "irc.freenode.net" :port 6667 :nick "lyang")
-  )
-
+  (setq erc-autojoin-channels-alist '(("freenode.net")))
+  ;;(erc :server "irc.freenode.net" :port 6667 :nick "lyang")
+)
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
 (custom-set-variables
@@ -289,7 +288,7 @@ you should place your code here."
  '(erc-autojoin-mode t)
  '(erc-modules
    (quote
-    (sound completion autojoin notifications log image hl-nicks services netsplit fill button match track readonly networks ring noncommands irccontrols move-to-prompt stamp menu list)))
+    (sound completion notifications log image hl-nicks services netsplit fill button match track readonly networks ring noncommands irccontrols move-to-prompt stamp menu list)))
  '(markdown-command "/usr/bin/pandoc")
  '(paradox-github-token t))
 (custom-set-faces
