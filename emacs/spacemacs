@@ -288,7 +288,7 @@ you should place your code here."
  '(erc-autojoin-mode t)
  '(erc-modules
    (quote
-    (sound completion notifications log image hl-nicks services netsplit fill button match track readonly networks ring noncommands irccontrols move-to-prompt stamp menu list)))
+    (notify completion sound notifications log image hl-nicks services netsplit fill button match track readonly networks ring noncommands irccontrols move-to-prompt stamp menu list)))
  '(markdown-command "/usr/bin/pandoc")
  '(paradox-github-token t))
 (custom-set-faces
