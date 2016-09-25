@@ -1,0 +1,67 @@
+"*":
+  "atom-beautify":
+    general:
+      _analyticsUserId: "859a99b2-e770-4479-9981-027794ec8b44"
+    html: {}
+    python:
+      default_beautifier: "yapf"
+      sort_imports: true
+  "autocomplete-python":
+    extraPaths: "/home/yippee/.virtualenvs/$PROJECT_NAME/lib/python2.7/site-packages;/home/yippee/.local/lib/python2.7/site-packages"
+    outputDebug: true
+    outputProviderErrors: true
+    pythonPaths: "/home/yippee/.virtualenvs/$PROJECT_NAME/bin/python;/usr/bin/python"
+    useSnippets: "all"
+  core:
+    autoHideMenuBar: true
+    packagesWithKeymapsDisabled: []
+    projectHome: "/home/yippee/GlobalProject"
+    themes: [
+      "one-light-ui"
+      "one-light-syntax"
+    ]
+  docblockr:
+    auto_add_method_tag: true
+    deep_indent: true
+  editor:
+    invisibles: {}
+    scrollPastEnd: true
+    showIndentGuide: true
+    showInvisibles: true
+  "exception-reporting":
+    userId: "8b15e4d8-1784-c18f-99cf-b9bae3576d41"
+  "highlight-selected":
+    highlightBackground: true
+    ignoreCase: true
+    lightTheme: true
+  linter:
+    errorPanelHeight: 147
+  "linter-flake8":
+    executablePath: "/home/yippee/.local/bin//flake8"
+  "one-light-ui": {}
+  "platformio-ide-terminal":
+    toggles:
+      autoClose: true
+  "quick-highlight": {}
+  "symbols-tree-view":
+    autoToggle: true
+    defaultWidth: 255
+  "vim-mode-plus":
+    clearHighlightSearchOnResetNormalMode: true
+    clearRangeMarkerOnResetNormalMode: true
+    highlightSearch: true
+    ignoreCaseForSearch: true
+    ignoreCaseForSearchCurrentWord: true
+    incrementalSearch: true
+    showHoverOnOperate: true
+    showHoverSearchCounter: true
+    startInInsertMode: true
+    useClipboardAsDefaultRegister: true
+    useSmartcaseForSearch: true
+    useSmartcaseForSearchCurrentWord: true
+    wrapLeftRightMotion: true
+  welcome:
+    showOnStartup: false
+".gitignore.source":
+  editor:
+    tabLength: 4
