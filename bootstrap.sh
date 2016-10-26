@@ -27,8 +27,6 @@ elif [ -d $HOME/.oh-my-zsh ];then
 fi
 ln -s $DIR/zsh/oh-my-zsh $HOME/.oh-my-zsh
 
-#echo "git..."
-#ln -s $DIR/git/gitconfig $home/.gitconfig
 
 echo "terminator..."
 if [ -L $HOME/.config/terminator/config ];then
@@ -38,13 +36,6 @@ elif [ -f $HOME/.config/terminator/config ];then
 fi
 ln -s $DIR/terminator/config $HOME/.config/terminator/config
 
-echo "tmux..."
-if [ -L $HOME/.tmux.conf ];then
-    unlink $HOME/.tmux.conf
-elif [ -f $HOME/.tmux.conf ];then
-    mv $HOME/.tmux.conf $BACK_DIR/.tmux.conf.$DAY
-fi
-ln -s $DIR/tmux/tmux.conf $HOME/.tmux.conf
 
 echo "spacemacs..."
 if [ -L $HOME/.spacemacs ];then

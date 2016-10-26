@@ -44,8 +44,8 @@ values."
      syntax-checking
      ;; version-control
      (python :variables
-             python-test-runner 'pytest
-             python-enable-yapf-format-on-save t)
+             python-test-runner 'pytest)
+             ;; python-enable-yapf-format-on-save t)
      chinese
      gtags
      ibuffer
@@ -57,6 +57,7 @@ values."
                 eyebrowse-display-help nil)
      cscope
      semantic
+     imenu-list
      )
    ;; List of additional packages that will be installed without being
    ;; wrapped in a layer. If you need some configuration for these
