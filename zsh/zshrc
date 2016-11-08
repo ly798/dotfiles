@@ -6,8 +6,6 @@ export ZSH=$HOME/.oh-my-zsh
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
 ZSH_THEME="af-magic"
-#ZSH_THEME="dpoggi"
-#ZSH_THEME="muse"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -84,35 +82,9 @@ fi
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-#alias vim="vi"
-alias df='df -h'
 
-export NVM_DIR="/home/yippee/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
-export PATH=$PATH:/home/yippee/.local/lib/python2.7/site-packages/django/bin
-export PATH=$PATH:/home/yippee/.local/bin/
 
-alias rdo='ssh root@rdo'
-alias eayun='ssh root@eayunstack'
-alias obs='ssh root@obs'
-alias remote='ssh root@192.168.2.64'
-alias node-8='ssh root@25.0.0.5'
-alias 45='ssh root@192.168.2.45'
-alias 92='ssh root@192.168.2.147'
-
-#ssh -qTfnN -D 10000 -p 22 liuyang@10.10.10.3
-
-#export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
-export PATH="$PATH:$HOME/privatebin"
-#export JAVA_HOME="/usr/lib/jvm/default-java"
-export JAVA_HOME="/opt/jdk1.8.0_91"
-export ANDROID_HOME="/opt/android-sdk-linux"
-export PATH="$PATH:$ANDROID_HOME/platform-tools:$ANDROID_HOME/tools"
-export ANDROID_SDK_ROOT="/opt/android-sdk-linux"
-
-alias tmux="tmux -2"
-[ -z "$TMUX"  ] && export TERM=xterm-256color
-
-source /home/yippee/.local/bin/virtualenvwrapper.sh 
-
+# costom
+for file in ~/.{exports,aliases,extra}; do
+	source "$file";
+done;

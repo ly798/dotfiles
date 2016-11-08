@@ -11,23 +11,52 @@ else
     echo "create .dotfileback"
 fi
 
+
+### ZSH ###
 echo "zsh..."
 if [ -L $HOME/.zshrc ];then
     unlink $HOME/.zshrc
 elif [ -f $HOME/.zshrc ];then
     mv $HOME/.zshrc $BACK_DIR/.zshrc.$DAY
 fi
-ln -s $DIR/zsh/zshrc $HOME/.zshrc
-
-
 if [ -L $HOME/.oh-my-zsh ];then
     unlink $HOME/.oh-my-zsh
 elif [ -d $HOME/.oh-my-zsh ];then
     mv $HOME/.oh-my-zsh $BACK_DIR/.oh-my-zsh.$DAY
 fi
+if [ -L $HOME/.aliases ];then
+    unlink $HOME/.aliases
+elif [ -d $HOME/.aliases ];then
+    mv $HOME/.aliases $BACK_DIR/.aliases.$DAY
+fi
+if [ -L $HOME/.exports ];then
+    unlink $HOME/.exports
+elif [ -d $HOME/.exports ];then
+    mv $HOME/.exports $BACK_DIR/.exports.$DAY
+fi
+if [ -L $HOME/.extra ];then
+    unlink $HOME/.extra
+elif [ -d $HOME/.extra ];then
+    mv $HOME/.extra $BACK_DIR/.extra.$DAY
+fi
+ln -s $DIR/zsh/aliases $HOME/.aliases
 ln -s $DIR/zsh/oh-my-zsh $HOME/.oh-my-zsh
+ln -s $DIR/zsh/zshrc $HOME/.zshrc
+ln -s $DIR/zsh/exports $HOME/.exports
+ln -s $DIR/zsh/extra $HOME/.extra
 
 
+### VIM ###
+echo "vim..."
+if [ -L $HOME/.vimrc ];then
+    unlink $HOME/.vimrc
+elif [ -d $HOME/.vimrc ];then
+    mv $HOME/.vimrc $BACK_DIR/.vimrc.$DAY
+fi
+ln -s $DIR/vim/vimrc $HOME/.vimrc
+
+
+### TERMINATOR ###
 echo "terminator..."
 if [ -L $HOME/.config/terminator/config ];then
     unlink $HOME/.config/terminator/config 
@@ -37,6 +66,7 @@ fi
 ln -s $DIR/terminator/config $HOME/.config/terminator/config
 
 
+### SPACEMACS ###
 echo "spacemacs..."
 if [ -L $HOME/.spacemacs ];then
     unlink $HOME/.spacemacs
@@ -45,6 +75,8 @@ elif [ -f $HOME/.spacemacs ];then
 fi
 ln -s $DIR/emacs/spacemacs $HOME/.spacemacs
 
+
+### SOURCE ###
 echo "pip source..."
 if [ -L $HOME/.pip/pip.conf ];then
     unlink $HOME/.pip/pip.conf
@@ -53,6 +85,8 @@ elif [ -f $HOME/.pip/pip.conf ];then
 fi
 ln -s $DIR/source/pip.conf $HOME/.pip/pip.conf
 
+
+### ATOM ###
 echo "atom..."
 if [ -L $HOME/.atom/init.coffee ];then
     unlink $HOME/.atom/init.coffee

@@ -1,0 +1,29 @@
+# Make Python use UTF-8 encoding for output to stdin, stdout, and stderr.
+export PYTHONIOENCODING='UTF-8';
+
+# Prefer US English and use UTF-8.
+export LANG='en_US.UTF-8';
+export LC_ALL='en_US.UTF-8';
+
+# RVM
+#export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
+
+# Costom x file
+export PATH="$PATH:$HOME/privatebin"
+
+# Java and Android
+#export JAVA_HOME="/usr/lib/jvm/default-java"
+export JAVA_HOME="/opt/jdk1.8.0_91"
+export ANDROID_HOME="/opt/android-sdk-linux"
+export PATH="$PATH:$ANDROID_HOME/platform-tools:$ANDROID_HOME/tools"
+export ANDROID_SDK_ROOT="/opt/android-sdk-linux"
+
+# NVM
+export NVM_DIR="/home/yippee/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+
+# User's python path
+export PATH=$PATH:/home/yippee/.local/lib/python2.7/site-packages/django/bin
+export PATH=$PATH:/home/yippee/.local/bin/
+

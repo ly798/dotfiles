@@ -1,0 +1,38 @@
+#!/usr/bin/env bash
+
+# Easier navigation: .., ..., ...., ....., ~ and -
+alias ..="cd .."
+alias ...="cd ../.."
+alias ~="cd ~" # `cd` is probably faster to type though
+alias -- -="cd -"
+
+# Always enable colored `grep` output
+# Note: `GREP_OPTIONS="--color=auto"` is deprecated, hence the alias usage.
+alias grep='grep --color=auto'
+alias fgrep='fgrep --color=auto'
+alias egrep='egrep --color=auto'
+
+# IP addresses
+alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
+
+# URL-encode strings
+alias urlencode='python -c "import sys, urllib as ul; print ul.quote_plus(sys.argv[1]);"'
+
+# Print each PATH entry on a separate line
+alias path='echo -e ${PATH//:/\\n}'
+
+# Python Web Server
+alias sweb='python -m SimpleHTTPServer $1'
+
+# Costom
+alias df='df -h'
+alias p="cd ~/GlobalProject"
+
+# SSH 
+alias rdo='ssh root@rdo'
+alias eayun='ssh root@eayunstack'
+alias obs='ssh root@obs'
+alias remote='ssh root@192.168.2.64'
+alias node-8='ssh root@25.0.0.5'
+alias 45='ssh root@192.168.2.45'
+alias 92='ssh root@192.168.2.147'
