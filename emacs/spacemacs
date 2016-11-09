@@ -55,9 +55,9 @@ values."
      prodigy
      smex
      typography
-     erc
-     (eyebrowse :variables
-                eyebrowse-display-help nil)
+     ;; erc
+     ;; (eyebrowse :variables
+     ;;           eyebrowse-display-help nil)
      cscope
      semantic
      imenu-list
@@ -133,7 +133,7 @@ values."
    ;; Default font. `powerline-scale' allows to quickly tweak the mode-line
    ;; size to make separators look not too crappy.
    dotspacemacs-default-font '("Source Code Pro"
-                               :size 13
+                               :size 15 
                                :weight normal
                                :width normal
                                :powerline-scale 1.1)
@@ -276,11 +276,24 @@ This is the place where most of your configurations should be done. Unless it is
 explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
   (global-company-mode)
-  ;; 显示行号
+  ;; display line num
   (add-hook 'find-file-hooks (lambda () (linum-mode 1)))
-  (setq erc-social-graph-dynamic-graph t)
-  (setq erc-autojoin-channels-alist '(("freenode.net")))
+  ;;(setq erc-social-graph-dynamic-graph t)
+  ;;(setq erc-autojoin-channels-alist '(("freenode.net")))
   ;;(erc :server "irc.freenode.net" :port 6667 :nick "lyang")
+
+  (setq dotspacemacs-distinguish-gui-tab t)
+
+  ;; disable arrow keys
+  (define-key evil-insert-state-map [left] 'undefined)
+  (define-key evil-insert-state-map [right] 'undefined)
+  (define-key evil-insert-state-map [up] 'undefined)
+  (define-key evil-insert-state-map [down] 'undefined)
+  (define-key evil-motion-state-map [left] 'undefined)
+  (define-key evil-motion-state-map [right] 'undefined)
+  (define-key evil-motion-state-map [up] 'undefined)
+  (define-key evil-motion-state-map [down] 'undefined)
+  ;;(define-key evil-motion-state-map [C-i] 'evil-jump-forward)
 )
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
