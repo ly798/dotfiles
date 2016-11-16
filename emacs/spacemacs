@@ -306,7 +306,7 @@ you should place your code here."
  '(erc-modules
    (quote
     (notify completion sound notifications log image hl-nicks services netsplit fill button match track readonly networks ring noncommands irccontrols move-to-prompt stamp menu list)))
- '(markdown-command "/usr/bin/pandoc")
+ '(markdown-command "/home/yippee/.cabal/bin/pandoc -s -S --toc --latex-engine=xelatex -V mainfont='WenQuanYi Micro Hei Mono'")
  '(paradox-github-token t))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.

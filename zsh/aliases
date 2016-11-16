@@ -25,6 +25,8 @@ alias path='echo -e ${PATH//:/\\n}'
 # Python Web Server
 alias sweb='python -m SimpleHTTPServer $1'
 
+# Pandoc
+alias pandoc='pandoc -s -S --toc --latex-engine=xelatex -V mainfont="WenQuanYi Micro Hei Mono"'
 # Costom
 alias df='df -h'
 alias du='du -sh'

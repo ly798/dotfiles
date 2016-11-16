@@ -3,6 +3,7 @@
 DAY=`date +"%Y-%m-%d-%H:%M"`
 DIR=`pwd`
 BACK_DIR=$HOME/.dotfileback
+CABAL_DIR=$HOME/.cabal
 
 if [ -d $BACK_DIR ];then
     echo ".dotfileback exist"
@@ -11,6 +12,9 @@ else
     echo "create .dotfileback"
 fi
 
+if [ ! -d $CABAL_DIR ];then
+    mkdir $CABAL_DIR
+fi
 
 ### ZSH ###
 echo "zsh..."
@@ -84,6 +88,14 @@ elif [ -f $HOME/.pip/pip.conf ];then
     mv $HOME/.pip/pip.conf $BACK_DIR/pip.conf.$DAY
 fi
 ln -s $DIR/source/pip.conf $HOME/.pip/pip.conf
+
+echo "cabal source..."
+if [ -L $HOME/.cabal/config ];then
+    unlink $HOME/.cabal/config
+elif [ -f $HOME/.cabal/config ];then
+    mv $HOME/.cabal/config $BACK_DIR/cabal.conf.$DAY
+fi
+ln -s $DIR/source/cabal.conf $HOME/.cabal/config
 
 
 ### ATOM ###

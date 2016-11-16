@@ -27,3 +27,5 @@ export NVM_DIR="/home/yippee/.nvm"
 export PATH=$PATH:/home/yippee/.local/lib/python2.7/site-packages/django/bin
 export PATH=$PATH:/home/yippee/.local/bin/
 
+# Cabal
+export PATH=/home/yippee/.cabal/bin:$PATH
