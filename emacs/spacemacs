@@ -49,7 +49,7 @@ values."
      ;; version-control
      (python :variables
              python-test-runner 'pytest)
-             ;; python-enable-yapf-format-on-save t)
+     ;; python-enable-yapf-format-on-save t)
      chinese
      gtags
      ibuffer
@@ -134,7 +134,7 @@ values."
    ;; Default font. `powerline-scale' allows to quickly tweak the mode-line
    ;; size to make separators look not too crappy.
    dotspacemacs-default-font '("Source Code Pro"
-                               :size 15 
+                               :size 15
                                :weight normal
                                :width normal
                                :powerline-scale 1.1)
@@ -271,7 +271,7 @@ before packages are loaded. If you are unsure, you should try in setting them in
         '(("melpa-cn" . "http://elpa.zilongshanren.com/melpa/")
           ("org-cn"   . "http://elpa.zilongshanren.com/org/")
           ("gnu-cn"   . "http://elpa.zilongshanren.com/gnu/")))
-)
+  )
 
 (defun dotspacemacs/user-config ()
   "Configuration function for user code.
@@ -299,7 +299,14 @@ you should place your code here."
   (define-key evil-motion-state-map [up] 'undefined)
   (define-key evil-motion-state-map [down] 'undefined)
   ;;(define-key evil-motion-state-map [C-i] 'evil-jump-forward)
-)
+  (global-set-key (kbd "<C-tab>") #'(lambda ()
+                                      (interactive)
+                                      (switch-to-buffer (other-buffer (current-buffer) 1))))
+  (global-set-key (kbd ",")
+                  #'(lambda ()
+                      (interactive)
+                      (insert ", ")))
+  )
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
 (custom-set-variables

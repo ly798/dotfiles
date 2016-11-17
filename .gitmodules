@@ -2,3 +2,8 @@
 path = zsh/oh-my-zsh
 url = https://github.com/robbyrussell/oh-my-zsh.git
 branch = master
+
+[submodule "emacs/spacemacs"]
+	path = emacs/.emacs.d
+	url = https://github.com/syl20bnr/spacemacs.git
+	branch = develop

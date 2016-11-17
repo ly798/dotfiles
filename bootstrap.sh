@@ -77,7 +77,13 @@ if [ -L $HOME/.spacemacs ];then
 elif [ -f $HOME/.spacemacs ];then
     mv $HOME/.spacemacs $BACK_DIR/.spacemacs.$DAY
 fi
+if [ -L $HOME/.emacs.d/ ];then
+    unlink $HOME/.emacs.d/
+elif [ -d $HOME/.emacs.d/ ];then
+    mv $HOME/.emacs.d/ $BACK_DIR/.emacs.d.$DAY
+fi
 ln -s $DIR/emacs/spacemacs $HOME/.spacemacs
+ln -s $DIR/emacs/.emacs.d $HOME/.emacs.d
 
 
 ### SOURCE ###

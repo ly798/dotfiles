@@ -14,7 +14,7 @@ export PATH="$PATH:$HOME/privatebin"
 
 # Java and Android
 #export JAVA_HOME="/usr/lib/jvm/default-java"
-export JAVA_HOME="/opt/jdk1.8.0_91"
+export JAVA_HOME="/opt/jdk"
 export ANDROID_HOME="/opt/android-sdk-linux"
 export PATH="$PATH:$ANDROID_HOME/platform-tools:$ANDROID_HOME/tools"
 export ANDROID_SDK_ROOT="/opt/android-sdk-linux"
