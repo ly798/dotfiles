@@ -23,15 +23,17 @@ alias urlencode='python -c "import sys, urllib as ul; print ul.quote_plus(sys.ar
 alias path='echo -e ${PATH//:/\\n}'
 
 # Python Web Server
-alias sweb='python -m SimpleHTTPServer $1'
+alias sw='python -m SimpleHTTPServer $1'
 
 # Pandoc
 alias pandoc='pandoc -s -S --latex-engine=xelatex -V mainfont="WenQuanYi Micro Hei Mono"'
+
 # Costom
 alias df='df -h'
 alias du='du -sh'
 alias p="cd ~/GlobalProject"
 alias sr="sudo su -"
+alias k="cat $HOME/nut/keymap.txt"
 
 # SSH 
 alias rdo='ssh root@rdo'

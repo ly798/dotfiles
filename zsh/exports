@@ -20,12 +20,12 @@ export PATH="$PATH:$ANDROID_HOME/platform-tools:$ANDROID_HOME/tools"
 export ANDROID_SDK_ROOT="/opt/android-sdk-linux"
 
 # NVM
-export NVM_DIR="/home/yippee/.nvm"
+export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 
 # User's python path
-export PATH=$PATH:/home/yippee/.local/lib/python2.7/site-packages/django/bin
-export PATH=$PATH:/home/yippee/.local/bin/
+export PATH=$PATH:$HOME/.local/lib/python2.7/site-packages/django/bin
+export PATH=$PATH:$HOME/.local/bin/
 
 # Cabal
-export PATH=/home/yippee/.cabal/bin:$PATH
+export PATH=$HOME/.cabal/bin:$PATH
