@@ -44,24 +44,22 @@ values."
      (shell :variables
             shell-default-height 30
             shell-default-position 'bottom)
-     ;; spell-checking
      syntax-checking
-     ;; version-control
      (python :variables
              python-test-runner 'pytest)
-     ;; python-enable-yapf-format-on-save t)
      chinese
      gtags
      ibuffer
      prodigy
      smex
-     typography
-     ;; erc
-     ;; (eyebrowse :variables
-     ;;           eyebrowse-display-help nil)
+     (typography :variables typography-enable-typographic-editing t)
      cscope
      semantic
      imenu-list
+     ;; (colors :variables colors-colorize-identifiers 'all)
+     (colors :variables colors-enable-nyan-cat-progress-bar t)
+     deft
+     pandoc
      )
    ;; List of additional packages that will be installed without being
    ;; wrapped in a layer. If you need some configuration for these
@@ -122,13 +120,12 @@ values."
    ;; List of themes, the first of the list is loaded when spacemacs starts.
    ;; Press <SPC> T n to cycle to the next theme in the list (works great
    ;; with 2 themes variants, one dark and one light)
-   dotspacemacs-themes '(spacemacs-dark
+   dotspacemacs-themes '(leuven
+                         gandalf
+                         spacemacs-dark
                          spacemacs-light
-                         solarized-light
-                         solarized-dark
-                         leuven
-                         monokai
-                         zenburn)
+                         brin
+                         adwaita)
    ;; If non nil the cursor color matches the state color in GUI Emacs.
    dotspacemacs-colorize-cursor-according-to-state t
    ;; Default font. `powerline-scale' allows to quickly tweak the mode-line
@@ -306,6 +303,13 @@ you should place your code here."
                   #'(lambda ()
                       (interactive)
                       (insert ", ")))
+  (define-key evil-insert-state-map (kbd "`")
+                  #'(lambda ()
+                      (interactive)
+                      (insert "`")))
+  (setq deft-directory "~/nut/notes")
+  (setq deft-extensions '("md" "org" "txt"))
+  (setq deft-use-filename-as-title t)
   )
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
