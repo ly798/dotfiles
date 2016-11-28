@@ -33,7 +33,7 @@ alias df='df -h'
 alias du='du -sh'
 alias p="cd ~/GlobalProject"
 alias sr="sudo su -"
-alias k="cat $HOME/nut/keymap.txt"
+alias k="cat $HOME/nut/notes/keymap.txt"
 
 # SSH 
 alias rdo='ssh root@rdo'
