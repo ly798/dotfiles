@@ -4,6 +4,7 @@ DAY=`date +"%Y-%m-%d-%H:%M"`
 DIR=`pwd`
 BACK_DIR=$HOME/.dotfileback
 CABAL_DIR=$HOME/.cabal
+ARIA_DIR=$HOME/.aria2
 
 if [ -d $BACK_DIR ];then
     echo ".dotfileback exist"
@@ -14,6 +15,10 @@ fi
 
 if [ ! -d $CABAL_DIR ];then
     mkdir $CABAL_DIR
+fi
+
+if [ ! -d $ARIA_DIR ];then
+    mkdir $ARIA_DIR
 fi
 
 # param: source_path,  target_path,  [backup_name]
@@ -75,3 +80,7 @@ mount atom/config.cson .atom/config.cson atom.config.cson
 mount atom/keymap.cson .atom/keymap.cson atom.keymap.cson
 mount atom/snippets.cson .atom/snippets.cson atom.snippets.cson
 mount atom/styles.less .atom/styles.less atom.styles.less
+
+### aria2 ###
+echo "aria2..."
+mount other/aria2.conf .aria2/aria2.conf aria2.conf

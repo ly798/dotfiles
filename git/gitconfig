@@ -1,9 +1,0 @@
-[user]
-	email = yippeetry@gmail.com
-	name = LiuYang
-[credential]
-	helper = store
-[core]
-	editor = vim
-[push]
-	default = simple
