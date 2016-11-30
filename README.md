@@ -2,7 +2,13 @@
 
 Not compatible.
 
+## include
 
-* submodule
-
-    `git submodule update`
+* Atom
+* Spcaemacs
+* Terminator
+* Vim
+* Zsh
+* Pypi Mirror
+* Cabal Mirror
+* Aria2
