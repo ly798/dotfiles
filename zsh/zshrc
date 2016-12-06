@@ -49,7 +49,7 @@ ENABLE_CORRECTION="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git git-flow debian grails rvm history-substring-search github gradle node npm zsh-syntax-highlighting sublime terminitor sudo python systemd ubuntu)
+plugins=(git gitfast git-flow history-substring-search github gradle node npm zsh-syntax-highlighting terminitor sudo python systemd command-not-found httpie jsontools pip tmux)
 
 # User configuration
 

@@ -60,6 +60,8 @@ values."
      (colors :variables colors-enable-nyan-cat-progress-bar t)
      deft
      pandoc
+     (c-c++ :variables
+                 c-c++-default-mode-for-headers 'c++-mode)
      )
    ;; List of additional packages that will be installed without being
    ;; wrapped in a layer. If you need some configuration for these
@@ -295,7 +297,7 @@ you should place your code here."
   (define-key evil-motion-state-map [right] 'undefined)
   (define-key evil-motion-state-map [up] 'undefined)
   (define-key evil-motion-state-map [down] 'undefined)
-  ;;(define-key evil-motion-state-map [C-i] 'evil-jump-forward)
+  (define-key evil-motion-state-map [C-i] 'evil-jump-forward)
   (global-set-key (kbd "<C-tab>") #'(lambda ()
                                       (interactive)
                                       (switch-to-buffer (other-buffer (current-buffer) 1))))
@@ -316,8 +318,9 @@ you should place your code here."
         (interactive)
         (insert "'")))
   (setq deft-directory "~/nut/notes")
-  (setq deft-extensions '("md" "org" "txt"))
+  (setq deft-extensions '("org" "md" "txt"))
   (setq deft-use-filename-as-title t)
+  (setq org-src-fontify-natively t)
   )
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
