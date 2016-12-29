@@ -18,15 +18,15 @@ values."
    ;; of a list then all discovered layers will be installed.
    dotspacemacs-configuration-layers
    '(
-     html
-     vimscript
-     javascript
-     yaml
      ;; ----------------------------------------------------------------
      ;; Example of useful layers you may want to use right away.
      ;; Uncomment some layer names and press <SPC f e R> (Vim style) or
      ;; <M-m f e R> (Emacs style) to install them.
      ;; ----------------------------------------------------------------
+     html
+     vimscript
+     javascript
+     yaml
      (auto-completion :variables
                       auto-completion-return-key-behavior 'complete
                       auto-completion-tab-key-behavior 'cycle
@@ -40,7 +40,8 @@ values."
      emacs-lisp
      git
      markdown
-     org
+     (org :variables
+          org-enable-github-support t)
      (shell :variables
             shell-default-height 30
             shell-default-position 'bottom)
@@ -281,13 +282,13 @@ explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
   (global-company-mode)
   ;; display line num
-  (add-hook 'find-file-hooks (lambda () (linum-mode 1)))
+  (add-hook 'find-file-hooks
+            (lambda ()
+              (linum-mode 1)))
   ;;(setq erc-social-graph-dynamic-graph t)
   ;;(setq erc-autojoin-channels-alist '(("freenode.net")))
   ;;(erc :server "irc.freenode.net" :port 6667 :nick "lyang")
-
   (setq dotspacemacs-distinguish-gui-tab t)
-
   ;; disable arrow keys
   (define-key evil-insert-state-map [left] 'undefined)
   (define-key evil-insert-state-map [right] 'undefined)
@@ -298,30 +299,28 @@ you should place your code here."
   (define-key evil-motion-state-map [up] 'undefined)
   (define-key evil-motion-state-map [down] 'undefined)
   (define-key evil-motion-state-map [C-i] 'evil-jump-forward)
-  (global-set-key (kbd "<C-tab>") #'(lambda ()
-                                      (interactive)
-                                      (switch-to-buffer (other-buffer (current-buffer) 1))))
+  (global-set-key (kbd "<C-tab>")
+                  #'(lambda ()
+                      (interactive)
+                      (switch-to-buffer (other-buffer (current-buffer)
+                                                      1))))
   (global-set-key (kbd ",")
                   #'(lambda ()
                       (interactive)
                       (insert ", ")))
-  (define-key evil-insert-state-map (kbd "`")
-    #'(lambda ()
-        (interactive)
-        (insert "`")))
-  (define-key evil-insert-state-map (kbd "-")
-    #'(lambda ()
-        (interactive)
-        (insert "-")))
-  (define-key evil-insert-state-map (kbd "'")
-    #'(lambda ()
-        (interactive)
-        (insert "'")))
+  (define-key evil-insert-state-map (kbd "`") #'(lambda ()
+                                                  (interactive)
+                                                  (insert "`")))
+  (define-key evil-insert-state-map (kbd "-") #'(lambda ()
+                                                  (interactive)
+                                                  (insert "-")))
+  (define-key evil-insert-state-map (kbd "'") #'(lambda ()
+                                                  (interactive)
+                                                  (insert "'")))
   (setq deft-directory "~/nut/notes")
   (setq deft-extensions '("org" "md" "txt"))
   (setq deft-use-filename-as-title t)
-  (setq org-src-fontify-natively t)
-  )
+  (setq org-src-fontify-natively t))
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
 (custom-set-variables
@@ -329,10 +328,10 @@ you should place your code here."
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(erc-autojoin-mode t)
- '(erc-modules
-   (quote
-    (notify completion sound notifications log image hl-nicks services netsplit fill button match track readonly networks ring noncommands irccontrols move-to-prompt stamp menu list)))
+ ;; '(erc-autojoin-mode t)
+ ;; '(erc-modules
+ ;; (quote
+ ;; (notify completion sound notifications log image hl-nicks services netsplit fill button match track readonly networks ring noncommands irccontrols move-to-prompt stamp menu list)))
  '(markdown-command "/home/yippee/.cabal/bin/pandoc -s -S --toc --latex-engine=xelatex -V mainfont='WenQuanYi Micro Hei Mono'")
  '(paradox-github-token t))
 (custom-set-faces
@@ -340,5 +339,4 @@ you should place your code here."
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(company-tooltip-common ((t (:inherit company-tooltip :weight bold :underline nil))))
- '(company-tooltip-common-selection ((t (:inherit company-tooltip-selection :weight bold :underline nil)))))
+ '(company-tooltip-common ((t (:inherit company-tooltip :weight bold :underline nil)))) '(company-tooltip-common-selection ((t (:inherit company-tooltip-selection :weight bold :underline nil)))))

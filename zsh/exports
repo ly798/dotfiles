@@ -29,3 +29,6 @@ export PATH=$PATH:$HOME/.local/bin/
 
 # Cabal
 export PATH=$HOME/.cabal/bin:$PATH
+
+# Git proxy
+export GIT_PROXY_COMMAND=/usr/local/bin/git-proxy-wrapper

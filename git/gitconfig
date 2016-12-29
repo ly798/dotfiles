@@ -1,0 +1,21 @@
+[user]
+	email = yippeetry@gmail.com
+	name = LiuYang
+[credential]
+	helper = store
+[push]
+	default = simple
+[gitreview]
+	username = liuyang
+	scheme = https
+	port = 443
+[core]
+	editor = vim
+[web]
+    browser = google-chrome
+[color]
+    ui = auto
+[diff]
+    tool = vimdiff
+[difftool]
+    prompt = false
