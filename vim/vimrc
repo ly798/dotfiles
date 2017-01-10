@@ -10,6 +10,10 @@
 " Desc: simple vim config for server, without any plugins.
 "==========================================
 
+" pathogen
+execute pathogen#infect()
+
+"==========================================
 " leader
 let mapleader = ','
 let g:mapleader = ','
@@ -132,6 +136,7 @@ endif
 
 " theme
 set background=dark
+" set background=light
 colorscheme desert
 
 " set mark column color
@@ -260,3 +265,12 @@ inoremap <UP> <NOP>
 inoremap <DOWN> <NOP>
 inoremap <LEFT> <NOP>
 inoremap <RIGHt> <NOP>
+
+" airline
+set laststatus=2
+let g:airline_powerline_fonts = 1
+let g:airline_theme='luna'
+
+" fzf
+set rtp+=~/.fzf
+nnoremap <leader>f :FZF<CR>

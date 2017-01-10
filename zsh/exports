@@ -31,4 +31,9 @@ export PATH=$PATH:$HOME/.local/bin/
 export PATH=$HOME/.cabal/bin:$PATH
 
 # Git proxy
-export GIT_PROXY_COMMAND=/usr/local/bin/git-proxy-wrapper
+# export GIT_PROXY_COMMAND=/usr/local/bin/git-proxy-wrapper
+
+export TERM=xterm-256color
+
+# NPM
+export PATH=~/npm/bin:$PATH

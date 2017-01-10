@@ -4,3 +4,19 @@ source $HOME/.local/bin/virtualenvwrapper.sh
 # tmux
 alias tmux="tmux -2"
 [ -z "$TMUX"  ] && export TERM=xterm-256color
+
+# C-z fg
+fancy-ctrl-z () {
+  if [[ $#BUFFER -eq 0 ]]; then
+    BUFFER="fg"
+    zle accept-line
+  else
+    zle push-input
+    zle clear-screen
+  fi
+}
+zle -N fancy-ctrl-z
+bindkey '^Z' fancy-ctrl-z
+
+# fzf
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

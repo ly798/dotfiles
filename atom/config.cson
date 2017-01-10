@@ -6,6 +6,9 @@
     python:
       default_beautifier: "yapf"
       sort_imports: true
+    vue:
+      end_with_newline: true
+      indent_inner_html: true
   "autocomplete-python":
     extraPaths: "/home/yippee/.virtualenvs/$PROJECT_NAME/lib/python2.7/site-packages;/home/yippee/.local/lib/python2.7/site-packages"
     outputDebug: true
@@ -24,6 +27,7 @@
     auto_add_method_tag: true
     deep_indent: true
   editor:
+    fontSize: 15
     invisibles: {}
     scrollPastEnd: true
     showIndentGuide: true

@@ -5,14 +5,18 @@ export ZSH=$HOME/.oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="af-magic"
+#ZSH_THEME="af-magic"
+#ZSH_THEME="agnoster"
+ZSH_THEME="dpoggi"
+#ZSH_THEME="fishy"
+DEFAULT_USER="yippee"
 
 # Uncomment the following line to use case-sensitive completion.
-# CASE_SENSITIVE="true"
+CASE_SENSITIVE="true"
 
 # Uncomment the following line to use hyphen-insensitive completion. Case
 # sensitive completion must be off. _ and - will be interchangeable.
-# HYPHEN_INSENSITIVE="true"
+HYPHEN_INSENSITIVE="false"
 
 # Uncomment the following line to disable bi-weekly auto-update checks.
 DISABLE_AUTO_UPDATE="false"
@@ -27,7 +31,7 @@ DISABLE_LS_COLORS="false"
 DISABLE_AUTO_TITLE="false"
 
 # Uncomment the following line to enable command auto-correction.
-ENABLE_CORRECTION="true"
+ENABLE_CORRECTION="false"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
 # COMPLETION_WAITING_DOTS="true"
@@ -49,7 +53,7 @@ ENABLE_CORRECTION="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git gitfast git-flow history-substring-search github gradle node npm zsh-syntax-highlighting terminitor sudo python systemd command-not-found httpie jsontools pip tmux)
+plugins=(git gitfast git-flow history-substring-search github gradle node npm zsh-syntax-highlighting terminitor sudo python systemd command-not-found httpie jsontools pip tmux zsh-autosuggestions)
 
 # User configuration
 
@@ -88,3 +92,5 @@ fi
 for file in ~/.{exports,aliases,extra}; do
 	source "$file";
 done;
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

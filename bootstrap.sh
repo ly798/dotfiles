@@ -84,3 +84,7 @@ mount atom/styles.less .atom/styles.less atom.styles.less
 ### aria2 ###
 echo "aria2..."
 mount other/aria2.conf .aria2/aria2.conf aria2.conf
+
+### git ###
+echo "git..."
+mount git/gitconfig .gitconfig gitconfig

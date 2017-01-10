@@ -12,3 +12,4 @@ Not compatible.
 * Pypi Mirror
 * Cabal Mirror
 * Aria2
+* Git

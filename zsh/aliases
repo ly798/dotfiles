@@ -44,3 +44,6 @@ alias node-8='ssh root@25.0.0.5'
 alias 45='ssh root@192.168.2.45'
 alias 92='ssh root@192.168.2.147'
 alias cephdev='ssh root@192.168.6.142'
+
+# fuck
+eval $(thefuck --alias)
