@@ -50,3 +50,9 @@ eval $(thefuck --alias)
 
 # docker
 alias mc="docker run --entrypoint=mc liuyang/mc"
+
+# cp
+alias rcp="rsync -avzP --progress --stats"
+
+# axel
+alias axel="axel -n 10 -a -S5"

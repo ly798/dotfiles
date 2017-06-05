@@ -53,7 +53,7 @@ ENABLE_CORRECTION="false"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git gitfast git-flow history-substring-search github gradle node npm zsh-syntax-highlighting terminitor sudo python systemd command-not-found httpie jsontools pip tmux zsh-autosuggestions)
+plugins=(git gitfast git-flow history-substring-search github gradle node npm zsh-syntax-highlighting terminitor sudo python systemd command-not-found httpie jsontools pip tmux zsh-autosuggestions z d)
 
 # User configuration
 
@@ -89,7 +89,7 @@ fi
 
 
 # costom
-for file in ~/.{exports,aliases,extra}; do
+for file in ~/.{exports,aliases,extra,overrode}; do
 	source "$file";
 done;
 

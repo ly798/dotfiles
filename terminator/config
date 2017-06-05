@@ -1,16 +1,8 @@
 [global_config]
+  title_inactive_fg_color = "#342626"
 [keybindings]
-[profiles]
-  [[default]]
-    scrollbar_position = hidden
-    use_system_font = False
-    background_darkness = 0.8
-    background_type = transparent
-    background_image = None
-    icon_bell = False
-    show_titlebar = False
-    font = DejaVu Sans Mono 12
-    scrollback_infinite = True
+  next_tab = <Primary>Tab
+  prev_tab = <Primary><Shift>Tab
 [layouts]
   [[default]]
     [[[child1]]]
@@ -21,3 +13,13 @@
       parent = ""
       type = Window
 [plugins]
+[profiles]
+  [[default]]
+    background_darkness = 0.8
+    background_image = None
+    font = DejaVu Sans Mono 12
+    icon_bell = False
+    scrollback_infinite = True
+    scrollbar_position = hidden
+    show_titlebar = False
+    use_system_font = False

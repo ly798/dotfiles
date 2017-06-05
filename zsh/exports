@@ -10,7 +10,7 @@ export LC_ALL='en_US.UTF-8';
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 
 # Costom x file
-export PATH="$PATH:$HOME/privatebin"
+#export PATH="$PATH:$HOME/privatebin"
 
 # Java and Android
 #export JAVA_HOME="/usr/lib/jvm/default-java"
@@ -39,7 +39,13 @@ export TERM=xterm-256color
 export PATH=~/npm/bin:$PATH
 
 # Go
-export GOROOT=$HOME/go
-export PATH=$PATH:$GOROOT/bin
-export GOPATH=$HOME/GlobalProject/Go
-export PATH=$PATH:$GOPATH/bin
+export GOROOT=/usr/local/go/bin
+export GOPATH=$HOME/go
+export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
+
+# Fission
+export FISSION_URL=http://127.0.0.1:31313
+export FISSION_ROUTER=127.0.0.1:31314
+
+# Pygments
+export GTAGSLABEL=pygments

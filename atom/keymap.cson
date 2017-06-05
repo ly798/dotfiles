@@ -52,3 +52,6 @@
 
 '.platform-linux atom-text-editor[data-grammar~=python]:not(.mini)':
     'g d':'autocomplete-python:go-to-definition'
+
+'atom-text-editor':
+    'ctrl-alt-f':'atom-beautify:beautify-editor'
