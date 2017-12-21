@@ -49,7 +49,7 @@ alias cephdev='ssh root@192.168.6.142'
 eval $(thefuck --alias)
 
 # docker
-alias mc="docker run --entrypoint=mc liuyang/mc"
+alias doc="docker"
 
 # cp
 alias rcp="rsync -avzP --progress --stats"

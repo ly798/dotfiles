@@ -1,0 +1,10 @@
+(global-page-break-lines-mode)
+(set-fontset-font "fontset-default"
+                  (cons page-break-lines-char page-break-lines-char)
+                  (face-attribute 'default :family))
+(require 'dashboard)
+(dashboard-setup-startup-hook)
+(setq dashboard-items '((recents  . 5)
+                        (projects . 5)
+                        (bookmarks . 5)))
+(provide 'init-dashboard)

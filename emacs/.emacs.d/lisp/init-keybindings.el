@@ -1,0 +1,11 @@
+(global-set-key (kbd "<C-tab>")
+                  #'(lambda ()
+                      (interactive)
+                      (switch-to-buffer (other-buffer (current-buffer)
+                                                      1))))
+(global-set-key (kbd ",")                                                                    
+                  #'(lambda ()
+                      (interactive)
+                      (insert ", ")))
+
+(provide 'init-keybindings)

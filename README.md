@@ -5,7 +5,7 @@ Not compatible.
 ## include
 
 * Atom
-* Spcaemacs
+* emacs
 * Terminator
 * Vim
 * Zsh

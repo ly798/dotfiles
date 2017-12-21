@@ -1,0 +1,7 @@
+(require 'projectile)  
+;;(projectile-mode 1)
+(projectile-global-mode)  
+(setq projectile-indexing-method 'native)  
+(setq projectile-enable-caching t)  
+(setq projectile-switch-project-action 'neotree-projectile-action)
+(provide 'init-projectile)

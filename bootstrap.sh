@@ -61,7 +61,7 @@ mount terminator/config .config/terminator/config .config
 
 ### SPACEMACS ###
 echo "spacemacs..."
-mount emacs/spacemacs .spacemacs
+#mount emacs/spacemacs .spacemacs
 mount emacs/.emacs.d .emacs.d
 
 
