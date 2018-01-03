@@ -21,6 +21,7 @@
             (define-key evil-normal-state-local-map (kbd "TAB") 'neotree-enter)
             (define-key evil-normal-state-local-map (kbd "SPC") 'neotree-quick-look)
             (define-key evil-normal-state-local-map (kbd "q") 'neotree-hide)
+            (define-key evil-normal-state-local-map (kbd "h") 'neotree-hidden-file-toggle)
             (define-key evil-normal-state-local-map (kbd "RET") 'neotree-enter)))
 
 ;; 图标主题
