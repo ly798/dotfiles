@@ -1,3 +1,6 @@
+;;; package --- Summary
+;;; Commentary:
+;;; Code:
 (package-initialize)
 
 ;; 把目录lisp/添加到搜索路径中去
@@ -61,6 +64,8 @@
                       dockerfile-mode
                       json-mode
                       json-reformat
+                      ;;web
+                      web-mode
                       ) "Default packages")
 
 (setq package-selected-packages my/packages)
