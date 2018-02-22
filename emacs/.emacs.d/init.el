@@ -55,6 +55,12 @@
                       which-key
                       go-mode
                       company-go
+                      ;; text file
+                      yaml-mode
+                      markdown-mode
+                      dockerfile-mode
+                      json-mode
+                      json-reformat
                       ) "Default packages")
 
 (setq package-selected-packages my/packages)
@@ -102,5 +108,6 @@
 (require 'init-imenu)
 (require 'init-whichkey)
 (require 'init-golang)
+(require 'init-textfile)
 
 (provide 'init)
