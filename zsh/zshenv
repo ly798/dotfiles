@@ -39,9 +39,11 @@ export TERM=xterm-256color
 export PATH=~/npm/bin:$PATH
 
 # Go
-export GOROOT=/usr/local/go/bin
-export GOPATH=$HOME/go
-export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
+#export GOROOT=/usr/local/go
+export GOROOT=/opt/go
+export GOPATH=$HOME/GlobalProject/go
+export PATH=$PATH:$GOROOT/bin
+export PATH=$PATH:$GOPATH/bin
 
 # Fission
 export FISSION_URL=http://127.0.0.1:31313

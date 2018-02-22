@@ -45,7 +45,8 @@ echo "zsh..."
 mount zsh/aliases .aliases
 mount zsh/oh-my-zsh .oh-my-zsh
 mount zsh/zshrc .zshrc
-mount zsh/exports .exports
+#mount zsh/exports .exports
+mount zsh/zshenv .zshenv
 mount zsh/extra .extra
 
 

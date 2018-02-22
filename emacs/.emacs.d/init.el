@@ -6,8 +6,12 @@
 (when (>= emacs-major-version 24)
   (require 'package)
   (package-initialize)
-  (setq package-archives '(("gnu"   . "http://elpa.emacs-china.org/gnu/")
-                           ("melpa" . "http://elpa.emacs-china.org/melpa/"))))
+  ;;(setq package-archives '(("gnu"   . "http://elpa.emacs-china.org/gnu/")
+  ;;                         ("melpa" . "http://elpa.emacs-china.org/melpa/"))))
+  (setq package-archives '(("gnu" . "https://elpa.gnu.org/packages/")
+                         ("melpa" . "https://melpa.org/packages/"))))
+  ;(add-to-list 'package-archives
+  ;        '("popkit" . "http://elpa.popkit.org/packages/")))
 
 ;; el-get
 (add-to-list 'load-path "~/.emacs.d/el-get/el-get")
@@ -40,6 +44,7 @@
                       flycheck
                       elpy
                       yasnippet
+                      yasnippet-snippets
                       neotree
                       deft
                       all-the-icons ;;图标
@@ -48,6 +53,8 @@
                       ox-pandoc
                       imenu-list
                       which-key
+                      go-mode
+                      company-go
                       ) "Default packages")
 
 (setq package-selected-packages my/packages)
@@ -69,6 +76,12 @@
 (require 'init-better-defaults)
 (require 'init-keybindings)
 
+;; PATH
+(exec-path-from-shell-initialize)
+(exec-path-from-shell-copy-env "PATH")
+(exec-path-from-shell-copy-env "GOPATH")
+(exec-path-from-shell-copy-env "GOROOT")
+
 ;; 插件
 (require 'init-company)
 (require 'init-evil)
@@ -88,5 +101,6 @@
 (require 'init-pandoc)
 (require 'init-imenu)
 (require 'init-whichkey)
+(require 'init-golang)
 
 (provide 'init)

@@ -14,7 +14,7 @@ alias egrep='egrep --color=auto'
 
 # IP addresses
 #alias mip="dig +short myip.opendns.com @resolver1.opendns.com"
-alias mip="curl http://ip.cn/"
+alias mip="curl ifconfig.me"
 
 # URL-encode strings
 alias urlencode='python -c "import sys, urllib as ul; print ul.quote_plus(sys.argv[1]);"'

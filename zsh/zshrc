@@ -89,7 +89,8 @@ fi
 
 
 # costom
-for file in ~/.{exports,aliases,extra,overrode}; do
+#for file in ~/.{exports,aliases,extra,overrode}; do
+for file in ~/.{aliases,extra,overrode}; do
 	source "$file";
 done;
 

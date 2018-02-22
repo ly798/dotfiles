@@ -1,4 +1,5 @@
 (require 'elpy)
 (elpy-enable)
 (add-hook 'after-init-hook #'global-flycheck-mode)
+(global-set-key (kbd "C-c C-f") 'elpy-format-code)
 (provide 'init-elpy)
