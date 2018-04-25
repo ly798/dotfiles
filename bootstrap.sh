@@ -73,15 +73,6 @@ mount source/pip.conf .pip/pip.conf pip.conf
 echo "cabal source..."
 mount source/cabal.conf .cabal/config cabal.conf
 
-
-### ATOM ###
-echo "atom..."
-mount atom/init.coffee .atom/init.coffee atom.init.coffee
-mount atom/config.cson .atom/config.cson atom.config.cson
-mount atom/keymap.cson .atom/keymap.cson atom.keymap.cson
-mount atom/snippets.cson .atom/snippets.cson atom.snippets.cson
-mount atom/styles.less .atom/styles.less atom.styles.less
-
 ### aria2 ###
 echo "aria2..."
 mount other/aria2.conf .aria2/aria2.conf aria2.conf

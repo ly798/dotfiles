@@ -9,9 +9,6 @@ export LC_ALL='en_US.UTF-8';
 #export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 
-# Costom x file
-#export PATH="$PATH:$HOME/privatebin"
-
 # Java and Android
 #export JAVA_HOME="/usr/lib/jvm/default-java"
 export JAVA_HOME="/opt/jdk"
@@ -21,7 +18,7 @@ export ANDROID_SDK_ROOT="/opt/android-sdk-linux"
 
 # NVM
 export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" --no-use  # This loads nvm
 
 # User's python path
 export PATH=$PATH:$HOME/.local/lib/python2.7/site-packages/django/bin
@@ -45,9 +42,8 @@ export GOPATH=$HOME/GlobalProject/go
 export PATH=$PATH:$GOROOT/bin
 export PATH=$PATH:$GOPATH/bin
 
-# Fission
-export FISSION_URL=http://127.0.0.1:31313
-export FISSION_ROUTER=127.0.0.1:31314
-
 # Pygments
 export GTAGSLABEL=pygments
+
+# autojump
+. /usr/share/autojump/autojump.sh

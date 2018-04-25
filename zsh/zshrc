@@ -19,7 +19,7 @@ CASE_SENSITIVE="true"
 HYPHEN_INSENSITIVE="false"
 
 # Uncomment the following line to disable bi-weekly auto-update checks.
-DISABLE_AUTO_UPDATE="false"
+DISABLE_AUTO_UPDATE="true"
 
 # Uncomment the following line to change how often to auto-update (in days).
 # export UPDATE_ZSH_DAYS=13
@@ -53,7 +53,8 @@ ENABLE_CORRECTION="false"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git gitfast git-flow history-substring-search github gradle node npm zsh-syntax-highlighting terminitor sudo python systemd command-not-found httpie jsontools pip tmux zsh-autosuggestions z d)
+plugins=(git gitfast history-substring-search zsh-syntax-highlighting python command-not-found jsontools pip zsh-autosuggestions autojump sudo z d)
+# node npm github terminitor sudo systemd httpie tmux gradle git-flow
 
 # User configuration
 
@@ -93,5 +94,3 @@ fi
 for file in ~/.{aliases,extra,overrode}; do
 	source "$file";
 done;
-
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

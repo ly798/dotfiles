@@ -1,5 +1,5 @@
 # virtualenvwrapper
-source $HOME/.local/bin/virtualenvwrapper.sh
+#source $HOME/.local/bin/virtualenvwrapper.sh
 
 # tmux
 alias tmux="tmux -2"
