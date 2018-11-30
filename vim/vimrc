@@ -257,14 +257,14 @@ cnoremap <C-a> <Home>
 cnoremap <C-e> <End>
 
 " disable key
-map <UP> <NOP>
-map <DOWN> <NOP>
-map <LEFT> <NOP>
-map <RIGHT> <NOP>
-inoremap <UP> <NOP>
-inoremap <DOWN> <NOP>
-inoremap <LEFT> <NOP>
-inoremap <RIGHt> <NOP>
+"map <UP> <NOP>
+"map <DOWN> <NOP>
+"map <LEFT> <NOP>
+"map <RIGHT> <NOP>
+"inoremap <UP> <NOP>
+"inoremap <DOWN> <NOP>
+"inoremap <LEFT> <NOP>
+"inoremap <RIGHt> <NOP>
 
 " airline
 set laststatus=2

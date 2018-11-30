@@ -42,28 +42,28 @@ function mount() {
 
 ### ZSH ###
 echo "zsh..."
-mount zsh/aliases .aliases
-mount zsh/oh-my-zsh .oh-my-zsh
-mount zsh/zshrc .zshrc
-#mount zsh/exports .exports
-mount zsh/zshenv .zshenv
-mount zsh/extra .extra
+mount zsh/aliases .aliases aliases
+mount zsh/oh-my-zsh .oh-my-zsh oh-my-zsh
+mount zsh/zshrc .zshrc zshrc
+mount zsh/zshenv .zshenv zshenv
+mount zsh/extra .extra extra
+mount zsh/cht .zsh.d/_cht cht
 
 
 ### VIM ###
 echo "vim..."
-mount vim/vimrc .vimrc
+mount vim/vimrc .vimrc vimrc
 
 
 ### TERMINATOR ###
 echo "terminator..."
-mount terminator/config .config/terminator/config .config
+mount terminator/config .config/terminator/config terminator_config
 
 
 ### SPACEMACS ###
 echo "spacemacs..."
 #mount emacs/spacemacs .spacemacs
-mount emacs/.emacs.d .emacs.d
+mount emacs/.emacs.d .emacs.d emacs.d
 
 
 ### SOURCE ###

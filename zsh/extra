@@ -31,3 +31,21 @@ fzf-locate-widget() {
 }
 zle     -N    fzf-locate-widget
 bindkey '\ei' fzf-locate-widget
+
+# proxychains
+proxychains-command-line() {
+    [[ -z $BUFFER ]] && zle up-history
+    if [[ $BUFFER == sudo\ proxychains4\ * ]]; then
+        LBUFFER="${LBUFFER#sudo\ proxychains4 }"
+        LBUFFER="sudo $LBUFFER"
+    elif [[ $BUFFER == sudo\ * ]]; then
+        LBUFFER="${LBUFFER#sudo }"
+        LBUFFER="sudo proxychains4 $LBUFFER"
+    elif [[ $BUFFER == proxychains4\ * ]]; then
+        LBUFFER="${LBUFFER#proxychains4 }"
+    elif [[ $BUFFER == * ]]; then
+        LBUFFER="proxychains4 $LBUFFER"
+    fi
+}
+zle     -N    proxychains-command-line
+bindkey '^[OQ^[OQ' proxychains-command-line
