@@ -41,7 +41,7 @@ alias sr="sudo su -"
 # eval $(thefuck --alias)
 
 # docker
-alias doc="docker"
+#alias doc="docker"
 
 # cp
 alias rcp="rsync -avzP --progress --stats"
