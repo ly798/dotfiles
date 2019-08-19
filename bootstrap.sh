@@ -57,6 +57,7 @@ mount vim/vimrc .vimrc vimrc
 
 ### TERMINATOR ###
 echo "terminator..."
+mkdir -p .config/terminator
 mount terminator/config .config/terminator/config terminator_config
 
 
@@ -68,14 +69,15 @@ mount emacs/.emacs.d .emacs.d emacs.d
 
 ### SOURCE ###
 echo "pip source..."
+mkdir -p ~/.pip
 mount source/pip.conf .pip/pip.conf pip.conf
 
-echo "cabal source..."
-mount source/cabal.conf .cabal/config cabal.conf
+#echo "cabal source..."
+#mount source/cabal.conf .cabal/config cabal.conf
 
 ### aria2 ###
-echo "aria2..."
-mount other/aria2.conf .aria2/aria2.conf aria2.conf
+#echo "aria2..."
+#mount other/aria2.conf .aria2/aria2.conf aria2.conf
 
 ### git ###
 echo "git..."

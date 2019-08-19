@@ -94,3 +94,5 @@ fi
 for file in ~/.{aliases,extra,overrode}; do
 	source "$file";
 done;
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
