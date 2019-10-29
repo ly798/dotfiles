@@ -19,7 +19,10 @@ export ANDROID_SDK_ROOT="/opt/android-sdk-linux"
 # ant
 export PATH=$PATH:/opt/apache-ant-1.10.5/bin
 
+
 # NVM
+export NVM_NODEJS_ORG_MIRROR=https://npm.taobao.org/mirrors/node
+export NVM_IOJS_ORG_MIRROR=https://npm.taobao.org/mirrors/iojs
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" --no-use  # This loads nvm
 
