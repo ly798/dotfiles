@@ -11,7 +11,15 @@
 "==========================================
 
 " pathogen
-execute pathogen#infect()
+" execute pathogen#infect()
+call plug#begin('~/.vim/plugged')
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+" Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
+Plug 'jiangmiao/auto-pairs'
+Plug 'mhinz/vim-startify'
+" Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+call plug#end()
 
 "==========================================
 " leader
@@ -59,7 +67,7 @@ set scrolloff=7                 " keep 3 lines when scrolling
 " show
 set ruler                       " show the current row and column
 set number                      " show line numbers
-set nowrap
+" set nowrap
 set showcmd                     " display incomplete commands
 set showmode                    " display current modes
 set showmatch                   " jump to matches when entering parentheses

@@ -1,3 +1,4 @@
+. $HOME/.local/lib/python2.7/site-packages/powerline/bindings/zsh/powerline.zsh
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
 
@@ -53,7 +54,7 @@ ENABLE_CORRECTION="false"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git gitfast history-substring-search zsh-syntax-highlighting python command-not-found jsontools pip zsh-autosuggestions autojump sudo z d docker docker-compose)
+plugins=(git gitfast history-substring-search zsh-syntax-highlighting python command-not-found jsontools pip zsh-autosuggestions autojump sudo z docker docker-compose)
 # node npm github terminitor sudo systemd httpie tmux gradle git-flow
 
 # User configuration
