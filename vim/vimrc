@@ -1,98 +1,138 @@
-"==========================================
-" ProjectLink: https://github.com/wklken/vim-for-server
-" Author:  wklken
-" Version: 0.2
-" Email: wklken@yeah.net
-" BlogPost: http://www.wklken.me
-" Donation: http://www.wklken.me/pages/donation.html
-" ReadMe: README.md
-" Last_modify: 2015-07-07
-" Desc: simple vim config for server, without any plugins.
-"==========================================
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" 通用设置
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let mapleader = ','
+let g:mapleader = ','    " 定义<leader>键
+set nocompatible         " 设置不兼容原始vi模式
+filetype on              " 设置开启文件类型侦测
+filetype plugin on       " 设置加载对应文件类型的插件
+set noeb                 " 关闭错误的提示
+syntax enable            " 开启语法高亮功能
+syntax on                " 自动语法高亮
+set t_Co=256             " 开启256色支持
+set cmdheight=2          " 设置命令行的高度
+set showcmd              " select模式下显示选中的行数
+set ruler                " 总是显示光标位置
+set laststatus=2         " 总是显示状态栏
+set number               " 开启行号显示
+set cursorcolumn         " 高亮显示当前列
+set cursorline           " 高亮显示当前行
+set whichwrap+=<,>,h,l   " 设置光标键跨行
+set ttimeoutlen=0        " 设置<ESC>键响应时间
+set virtualedit=block,onemore   " 允许光标出现在最后一个字符的后面
+set history=2000
+set shortmess=atI
+set magic                       " For regular expressions turn magic on
+set title                       " change the terminal's title
+set novisualbell                " turn off visual bell
+set noerrorbells                " don't beep
+set visualbell t_vb=            " turn off error beep/flash
+set t_vb=
+set tm=500
+set scrolloff=7                 " keep 3 lines when scrolling
+set showmode                    " display current modes
+set showmatch                   " jump to matches when entering parentheses
+set matchtime=2                 " tenths of a second to show the matching parenthesis
 
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" 代码缩进和排版
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"set autoindent           " 设置自动缩进
+set autoindent smartindent shiftround
+set cindent              " 设置使用C/C++语言的自动缩进方式
+set cinoptions=g0,:0,N-s,(0    " 设置C/C++语言的具体缩进方式
+set smartindent          " 智能的选择对其方式
+filetype indent on       " 自适应不同语言的智能缩进
+set expandtab            " 将制表符扩展为空格
+set tabstop=4            " 设置编辑时制表符占用空格数
+set shiftwidth=4         " 设置格式化时制表符占用空格数
+set softtabstop=4        " 设置4个空格为制表符
+set smarttab             " 在行和段开始处使用制表符
+set nowrap               " 禁止折行
+set backspace=2          " 使用回车键正常处理indent,eol,start等
+set sidescroll=10        " 设置向右滚动字符数
+set nofoldenable         " 禁用折叠代码
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" 代码补全
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set wildmenu             " vim自身命名行模式智能补全
+set completeopt-=preview " 补全时不显示窗口，只显示补全列表
+"set completeopt=longest,menu
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" 搜索设置
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set hlsearch            " 高亮显示搜索结果
+set incsearch           " 开启实时搜索功能
+set ignorecase          " 搜索时大小写不敏感
+"set smartcase           " 搜索时大小写敏感
+       
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" 缓存设置
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set nobackup            " 设置不备份
+set noswapfile          " 禁止生成临时文件
+set autoread            " 文件在vim之外修改过，自动重新读入
+set autowrite           " 设置自动保存
+set confirm             " 在处理未保存或只读文件的时候，弹出确认
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" 编码设置
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set langmenu=zh_CN.UTF-8
+set helplang=cn
+set termencoding=utf-8
+set encoding=utf8
+set fileencodings=utf8,ucs-bom,gbk,cp936,gb2312,gb18030
+"set fileencodings=ucs-bom,utf-8,cp936,gb18030,big5,euc-jp,euc-kr,latin1
+set ffs=unix,dos,mac
+set formatoptions+=m
+set formatoptions+=B
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" gvim/macvim设置
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+if has("gui_running")
+    let system = system('uname -s')
+    if system == "Darwin\n"
+        set guifont=Droid\ Sans\ Mono\ Nerd\ Font\ Complete:h18 " 设置字体
+    else
+        set guifont=DroidSansMono\ Nerd\ Font\ Regular\ 18      " 设置字体
+    endif
+    set guioptions-=m           " 隐藏菜单栏
+    set guioptions-=T           " 隐藏工具栏
+    set guioptions-=L           " 隐藏左侧滚动条
+    set guioptions-=r           " 隐藏右侧滚动条
+    set guioptions-=b           " 隐藏底部滚动条
+    set showtabline=0           " 隐藏Tab栏
+    set guicursor=n-v-c:ver5    " 设置光标为竖线
+endif
+
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" 插件列表
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " pathogen
-" execute pathogen#infect()
 call plug#begin('~/.vim/plugged')
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 " Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
 Plug 'jiangmiao/auto-pairs'
 Plug 'mhinz/vim-startify'
-" Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'scrooloose/nerdtree'
+Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'Yggdroot/LeaderF'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
+Plug 'skywind3000/vim-preview'
+Plug 'ludovicchabant/vim-gutentags'
+Plug 'skywind3000/gutentags_plus'
+Plug 'liuchengxu/vim-which-key', { 'on': ['WhichKey', 'WhichKey!'] }
 call plug#end()
 
-"==========================================
-" leader
-let mapleader = ','
-let g:mapleader = ','
-
-" syntax
-syntax on
-
-" history : how many lines of history VIM has to remember
-set history=2000
-
-" filetype
-filetype on
-" Enable filetype plugins
-filetype plugin on
-filetype indent on
-
-
-" base
-set nocompatible                " don't bother with vi compatibility
-set autoread                    " reload files when changed on disk, i.e. via `git checkout`
-set shortmess=atI
-
-set magic                       " For regular expressions turn magic on
-set title                       " change the terminal's title
-set nobackup                    " do not keep a backup file
-
-set novisualbell                " turn off visual bell
-set noerrorbells                " don't beep
-set visualbell t_vb=            " turn off error beep/flash
-set t_vb=
-set tm=500
-
-
-" show location
-set cursorcolumn
-set cursorline
-
-
-" movement
-set scrolloff=7                 " keep 3 lines when scrolling
-
-
-" show
-set ruler                       " show the current row and column
-set number                      " show line numbers
-" set nowrap
-set showcmd                     " display incomplete commands
-set showmode                    " display current modes
-set showmatch                   " jump to matches when entering parentheses
-set matchtime=2                 " tenths of a second to show the matching parenthesis
-
-
-" search
-set hlsearch                    " highlight searches
-set incsearch                   " do incremental searching, search as you type
-set ignorecase                  " ignore case when searching
-set smartcase                   " no ignorecase if Uppercase char present
-
-
-" tab
-set expandtab                   " expand tabs to spaces
-set smarttab
-set shiftround
-
-" indent
-set autoindent smartindent shiftround
-set shiftwidth=4
-set tabstop=4
-set softtabstop=4                " insert mode tab and backspace use 4 spaces
-
-" NOT SUPPORT
 " fold
 set foldenable
 set foldmethod=indent
@@ -109,43 +149,25 @@ fun! ToggleFold()
     endif
 endfun
 
-" encoding
-set encoding=utf-8
-set fileencodings=ucs-bom,utf-8,cp936,gb18030,big5,euc-jp,euc-kr,latin1
-set termencoding=utf-8
-set ffs=unix,dos,mac
-set formatoptions+=m
-set formatoptions+=B
-
 " select & complete
 set selection=inclusive
 set selectmode=mouse,key
 
-set completeopt=longest,menu
-set wildmenu                           " show a navigable menu for tab completion"
 set wildmode=longest,list,full
 set wildignore=*.o,*~,*.pyc,*.class
 
-" others
-set backspace=indent,eol,start  " make that backspace key work the way it should
-set whichwrap+=<,>,h,l
 
-" if this not work ,make sure .viminfo is writable for you
+" 打开文件自动定位到最后编辑的位置
 if has("autocmd")
   au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 endif
 
-" NOT SUPPORT
-" Enable basic mouse behavior such as resizing buffers.
-" set mouse=a
 
-
-" ============================ theme and status line ============================
-
-" theme
+" 主题设置
 set background=dark
-" set background=light
+"set background=light
 colorscheme desert
+let g:onedark_termcolors=256
 
 " set mark column color
 hi! link SignColumn   LineNr
@@ -154,11 +176,9 @@ hi! link ShowMarksHLu DiffChange
 
 " status line
 set statusline=%<%f\ %h%m%r%=%k[%{(&fenc==\"\")?&enc:&fenc}%{(&bomb?\",BOM\":\"\")}]\ %-14.(%l,%c%V%)\ %P
-set laststatus=2   " Always show the status line - use 2 lines for the status bar
 
 
-" ============================ specific file type ===========================
-
+" 特定文件设置
 autocmd FileType python set tabstop=4 shiftwidth=4 expandtab ai
 autocmd FileType ruby set tabstop=2 shiftwidth=2 softtabstop=2 expandtab ai
 autocmd BufRead,BufNew *.md,*.mkd,*.markdown  set filetype=markdown.mkd
@@ -189,8 +209,7 @@ fun! <SID>StripTrailingWhitespaces()
     call cursor(l, c)
 endfun
 
-" ============================ key map ============================
-
+" key map
 nnoremap k gk
 nnoremap gk k
 nnoremap j gj
@@ -274,11 +293,73 @@ cnoremap <C-e> <End>
 "inoremap <LEFT> <NOP>
 "inoremap <RIGHt> <NOP>
 
+" 编辑vimrc相关配置文件
+nnoremap <leader>e :edit $MYVIMRC<cr>
+" 重新加载vimrc文件
+nnoremap <leader>s :source $MYVIMRC<cr>
+
+" 安装、更新、删除插件
+nnoremap <leader><leader>i :PlugInstall<cr>
+nnoremap <leader><leader>u :PlugUpdate<cr>
+nnoremap <leader><leader>c :PlugClean<cr>
+
+" 分屏窗口移动
+nnoremap <c-j> <c-w>j
+nnoremap <c-k> <c-w>k
+nnoremap <c-h> <c-w>h
+nnoremap <c-l> <c-w>l
+
+" 打开当前光标所在单词的vim帮助文档
+nnoremap <leader>H :execute ":help " . expand("<cword>")<cr>
+
 " airline
-set laststatus=2
 let g:airline_powerline_fonts = 1
 let g:airline_theme='luna'
 
 " fzf
-set rtp+=~/.fzf
-nnoremap <leader>f :FZF<CR>
+" set rtp+=~/.fzf
+" nnoremap <leader>f :FZF<CR>
+nnoremap <silent> <Leader>f :Files<CR>
+nnoremap <silent> <Leader>b :Buffers<CR>
+
+" nerdtree
+nnoremap <silent> <leader>n :NERDTreeToggle<cr>
+let g:NERDTreeFileExtensionHighlightFullName = 1
+let g:NERDTreeExactMatchHighlightFullName = 1
+let g:NERDTreePatternMatchHighlightFullName = 1
+let g:NERDTreeHighlightFolders = 1
+let g:NERDTreeHighlightFoldersFullName = 1
+let g:NERDTreeDirArrowExpandable='▷'
+let g:NERDTreeDirArrowCollapsible='▼'
+
+" nerdtree-git-plugin
+let g:NERDTreeGitStatusIndicatorMapCustom = {
+            \ "Modified"  : "✹",
+            \ "Staged"    : "✚",
+            \ "Untracked" : "✭",
+            \ "Renamed"   : "➜",
+            \ "Unmerged"  : "═",
+            \ "Deleted"   : "✖",
+            \ "Dirty"     : "✗",
+            \ "Clean"     : "✔︎",
+            \ 'Ignored'   : '☒',
+            \ "Unknown"   : "?"
+            \ }
+" gtags
+" enable gtags module
+let g:gutentags_modules = ['ctags', 'gtags_cscope']
+" config project root markers.
+"let g:gutentags_project_root = ['.root']
+let g:gutentags_project_root = ['.root', '.svn', '.git', '.hg', '.project']
+" generate datebases in my cache directory, prevent gtags files polluting my project
+let g:gutentags_cache_dir = expand('~/.cache/tags')
+" change focus to quickfix window after search (optional).
+let g:gutentags_plus_switch = 1
+
+" vim-which-key
+let g:maplocalleader = ','
+nnoremap <silent> <localleader> :<c-u>WhichKey  ','<CR>
+autocmd FileType which_key highlight WhichKey ctermbg=12 ctermfg=7
+autocmd FileType which_key highlight WhichKeySeperator ctermbg=12 ctermfg=7
+autocmd FileType which_key highlight WhichKeyGroup cterm=bold ctermbg=12 ctermfg=7
+autocmd FileType which_key highlight WhichKeyDesc ctermbg=12 ctermfg=7

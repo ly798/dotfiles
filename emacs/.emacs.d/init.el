@@ -9,21 +9,17 @@
 (when (>= emacs-major-version 24)
   (require 'package)
   (package-initialize)
-  ;;(setq package-archives '(("gnu"   . "http://elpa.emacs-china.org/gnu/")
-  ;;                         ("melpa" . "http://elpa.emacs-china.org/melpa/"))))
-  (setq package-archives '(("gnu" . "https://elpa.gnu.org/packages/")
-                         ("melpa" . "https://melpa.org/packages/"))))
-  ;(add-to-list 'package-archives
-  ;        '("popkit" . "http://elpa.popkit.org/packages/")))
+  (setq package-archives '(("gnu"   . "http://mirrors.tuna.tsinghua.edu.cn/elpa/gnu/")
+                         ("melpa" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/melpa/"))))
 
 ;; el-get
 (add-to-list 'load-path "~/.emacs.d/el-get/el-get")
 (unless (require 'el-get nil 'noerror)
-  (with-current-buffer
-      (url-retrieve-synchronously
-       "https://raw.github.com/dimitri/el-get/master/el-get-install.el")
-    (goto-char (point-max))
-    (eval-print-last-sexp)))
+  (require 'package)
+  (package-refresh-contents)
+  (package-initialize)
+  (package-install 'el-get)
+  (require 'el-get))
 (add-to-list 'el-get-recipe-path "~/.emacs.d/el-get-user/recipes")
 (el-get 'sync)
 
@@ -41,6 +37,7 @@
 		      popwin
 		      evil
 		      helm
+                      helm-gtags
                       spaceline ;;powerline
 		      projectile
 		      helm-projectile
@@ -56,7 +53,6 @@
                       ox-pandoc
                       imenu-list
                       which-key
-                      go-mode
                       company-go
                       ;; text file
                       yaml-mode
@@ -90,8 +86,6 @@
 ;; PATH
 (exec-path-from-shell-initialize)
 (exec-path-from-shell-copy-env "PATH")
-(exec-path-from-shell-copy-env "GOPATH")
-(exec-path-from-shell-copy-env "GOROOT")
 
 ;; 插件
 (require 'init-company)
@@ -112,7 +106,6 @@
 (require 'init-pandoc)
 (require 'init-imenu)
 (require 'init-whichkey)
-(require 'init-golang)
 (require 'init-textfile)
 
 (provide 'init)

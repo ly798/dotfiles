@@ -3,6 +3,18 @@
 [keybindings]
   next_tab = <Primary>Tab
   prev_tab = <Primary><Shift>Tab
+[profiles]
+  [[default]]
+    icon_bell = False
+    background_darkness = 0.94
+    background_type = transparent
+    cursor_color = "#aaaaaa"
+    font = DejaVu Sans Mono 12
+    foreground_color = "#ffffff"
+    show_titlebar = False
+    scrollbar_position = hidden
+    scrollback_infinite = True
+    use_system_font = False
 [layouts]
   [[default]]
     [[[child1]]]
@@ -13,15 +25,3 @@
       parent = ""
       type = Window
 [plugins]
-[profiles]
-  [[default]]
-    background_darkness = 0.94
-    background_type = transparent
-    cursor_color = "#aaaaaa"
-    font = DejaVu Sans Mono 12
-    foreground_color = "#ffffff"
-    icon_bell = False
-    scrollback_infinite = True
-    scrollbar_position = hidden
-    show_titlebar = False
-    use_system_font = False

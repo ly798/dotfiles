@@ -1,2 +1,10 @@
 ;;; -*- coding: utf-8 -*-
-nil
+(("/home/ly/GlobalProject/ceph-luminous/src/osd/OSD.cc" . 151571)
+ ("/home/ly/.emacs.d/recentf" . 629)
+ ("/home/ly/GlobalProject/dotfiles/emacs/.emacs.d/init.el" . 2910)
+ ("/home/ly/GlobalProject/dotfiles/emacs/.emacs.d/lisp/init-helm.el" . 449)
+ ("/home/ly/GlobalProject/dotfiles/emacs/.emacs.d/"
+  (dired-filename . "/home/ly/GlobalProject/dotfiles/emacs/.emacs.d/lisp"))
+ ("/home/ly/GlobalProject/dotfiles/emacs/.emacs.d/lisp/"
+  (dired-filename . "/home/ly/GlobalProject/dotfiles/emacs/.emacs.d/lisp/init-ui.el"))
+ ("/home/ly/GlobalProject/dotfiles/emacs/.emacs.d/lisp/init-ui.el" . 262))

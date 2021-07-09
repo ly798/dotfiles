@@ -1,6 +1,7 @@
 [user]
-	email = yippeetry@gmail.com
-	name = LiuYang
+    #email = yippeetry@gmail.com
+	email = yang.liu@easystack.cn
+	name = liuyang
 [credential]
 	helper = store
 [push]

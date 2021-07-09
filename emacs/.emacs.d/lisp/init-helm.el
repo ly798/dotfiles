@@ -9,6 +9,7 @@
 (global-set-key (kbd "C-c h") 'helm-command-prefix)
 (global-unset-key (kbd "C-x c"))
 (global-set-key (kbd "M-x") 'helm-M-x)
+(global-set-key (kbd "C-x C-b") 'helm-buffers-list)
 
 (define-key helm-map (kbd "<tab>") 'helm-execute-persistent-action) ; rebind tab to run persistent action
 (define-key helm-map (kbd "C-i") 'helm-execute-persistent-action) ; make TAB work in terminal
@@ -49,5 +50,19 @@
       helm-recentf-fuzzy-match    t)
 (global-set-key (kbd "C-x C-f") 'helm-find-files)
 (global-set-key (kbd "C-x C-r") 'helm-recentf)
+
+
+;;; Enable helm-gtags-mode
+(add-hook 'c-mode-hook 'helm-gtags-mode)
+(add-hook 'c++-mode-hook 'helm-gtags-mode)
+;; key bindings
+(with-eval-after-load 'helm-gtags
+  (define-key helm-gtags-mode-map (kbd "M-t") 'helm-gtags-find-tag)
+  (define-key helm-gtags-mode-map (kbd "M-r") 'helm-gtags-find-rtag)
+  (define-key helm-gtags-mode-map (kbd "M-s") 'helm-gtags-find-symbol)
+  (define-key helm-gtags-mode-map (kbd "M-g M-p") 'helm-gtags-parse-file)
+  (define-key helm-gtags-mode-map (kbd "C-c <") 'helm-gtags-previous-history)
+  (define-key helm-gtags-mode-map (kbd "C-c >") 'helm-gtags-next-history)
+  (define-key helm-gtags-mode-map (kbd "M-,") 'helm-gtags-pop-stack))
 
 (provide 'init-helm)
