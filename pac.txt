@@ -589,6 +589,8 @@ var domains = {
   "giganews.com": 1, 
   "gimpshop.com": 1, 
   "git-scm.com": 1, 
+  "github.com": 1, 
+  "githubusercontent.com": 1, 
   "glennhilton.com": 1, 
   "globaljihad.net": 1, 
   "globalmuseumoncommunism.org": 1, 
