@@ -2184,6 +2184,7 @@ var domains = {
   "zsrhao.com": 1, 
   "zuo.la": 1, 
   "zuola.com": 1, 
+  "v2ex.com": 1,
 };
 
 function FindProxyForURL(url, host) {
